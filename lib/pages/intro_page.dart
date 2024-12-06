@@ -1,3 +1,4 @@
+import 'package:coffee/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -43,23 +44,30 @@ class IntroPage extends StatelessWidget {
           style: TextStyle(
             fontStyle: FontStyle.italic,
             fontFamily: 'poppins',
+            color: Colors.grey,
           ),
           ),
 
           const Spacer(),
 
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.brown,
-              borderRadius: BorderRadius.circular(17),
-            ),
-            padding: const EdgeInsets.all(20),
-            child: const Text("Get Started", style: TextStyle(
-              fontFamily: 'poppins',
-              color: Colors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.bold
-            ),
+          GestureDetector(
+            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (context) {
+                return const HomePage();
+            },)),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.brown,
+                borderRadius: BorderRadius.circular(17),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: const Text("Get Started", style: TextStyle(
+                fontFamily: 'poppins',
+                color: Colors.white,
+                fontSize: 15,
+                fontWeight: FontWeight.bold
+              ),
+              ),
             ),
           ),
 
