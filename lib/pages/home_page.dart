@@ -1,4 +1,6 @@
 import 'package:coffee/pages/intro_page.dart';
+import 'package:coffee/pages/profile_page.dart';
+import 'package:coffee/pages/see_more.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,10 +37,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const Spacer(),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const IntroPage(),
+                          builder: (context) => const ProfilePage(),
                         ),
                       ),
                       child: Image.asset(
@@ -60,12 +62,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 35),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: Divider(),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 15),
               Row(
                 children: [
                   const Padding(
@@ -73,7 +74,6 @@ class _HomePageState extends State<HomePage> {
                     child: Text(
                       "Best choice",
                       style: TextStyle(
-                        fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'poppins',
                         fontSize: 20,
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const IntroPage(),
+                          builder: (context) => const SeeMore(),
                         )),
                     child: const Text(
                       'see more',
