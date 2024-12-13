@@ -37,12 +37,12 @@ class _ProfilePageState extends State<ProfilePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/button/Profile picture.png',
-                height: 100,
-                width: 100,
-      
-                )              
-                ],
+                Image.asset(
+                  'assets/button/Profile picture.png',
+                  height: 100,
+                  width: 100,
+                )
+              ],
             ),
           ],
         ),
