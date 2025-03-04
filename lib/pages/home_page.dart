@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:coffee/pages/intro_page.dart';
 import 'package:coffee/pages/see_more.dart';
 import 'package:coffee/pages/profile_page.dart';
+import 'package:coffee/providers/intro_page_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
+  TextEditingController searchController = TextEditingController();
 
   final List<Widget> _pages = [
     const IntroPage(),
@@ -20,9 +23,13 @@ class _HomePageState extends State<HomePage> {
   ];
 
   void _onItemTapped(int index) {
+    final provider = context.read<IntroPageProvider>();
+
     setState(() {
       _currentIndex = index;
     });
+
+    provider.start();
 
     if (index == 0) {
       Navigator.push(
@@ -45,7 +52,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFB09C8D),
+      backgroundColor: const Color.fromARGB(255, 248, 248, 248),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -94,42 +101,45 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
-                child: Divider(),
-              ),
-              const SizedBox(height: 15),
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Text(
-                      "Best choice",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                        fontFamily: 'poppins',
-                        fontSize: 20,
-                      ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextField(
+                  controller: searchController,
+                  decoration: InputDecoration(
+                    hintText: "Search your coffee...",
+                    hintStyle: const TextStyle(
+                      fontFamily: 'poppins',
+                      color: Colors.black,
+                    ),
+                    prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                    filled: true,
+                    fillColor: Colors.grey[400],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
                     ),
                   ),
-                  SizedBox(width: 15),
-                ],
+                  onChanged: (value) {
+                    print("User sedang mencari: $value");
+                  },
+                ),
               ),
+              const SizedBox(height: 20),
+              const SizedBox(height: 15),
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFFB09C8D),
-        currentIndex: _currentIndex, // Indeks tab aktif
-        onTap: _onItemTapped, // Fungsi untuk navigasi
-        selectedItemColor: Colors.white, // Warna item yang dipilih
-        unselectedItemColor: const Color.fromARGB(255, 255, 255, 255), 
+        backgroundColor: Colors.white,
+        currentIndex: _currentIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/button/home.png', 
+              'assets/button/home.png',
               height: 24,
               width: 24,
             ),
@@ -137,7 +147,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/button/plus.png', 
+              'assets/button/plus.png',
               height: 24,
               width: 24,
             ),
@@ -145,7 +155,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'assets/button/user-circle.png', 
+              'assets/button/user-circle.png',
               height: 24,
               width: 24,
             ),

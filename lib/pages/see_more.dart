@@ -11,94 +11,34 @@ class _SeeMoreState extends State<SeeMore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.brown,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          "See More",
+          style: TextStyle(
+            fontFamily: 'poppins',
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
       ),
-      body: const SafeArea(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 55),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Arabika Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Robusta Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 55),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Lampung Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Liberika Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 55),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Toraja Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Bali Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(height: 55),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Jawa Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 60.0),
-                  child: Text(
-                    'Sumatera Coffee',
-                    style: TextStyle(fontFamily: 'poppins'),
-                  ),
-                ),
-              ],
-            ),
-          ],
+      body: const Center(
+        child: Text(
+          "More coffee details coming soon...",
+          style: TextStyle(
+            fontFamily: 'poppins',
+            fontSize: 16,
+            color: Colors.grey,
+          ),
         ),
       ),
     );

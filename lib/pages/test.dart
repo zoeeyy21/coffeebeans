@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          items:const [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
