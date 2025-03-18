@@ -76,11 +76,10 @@ class _HomePageState extends State<HomePage> {
   Widget _buildHomePageContent() {
   return Stack(
     children: [
-      // Background separuh coklat
       Container(
         height: MediaQuery.of(context).size.height * 0.4,
         decoration: const BoxDecoration(
-          color: Color(0xFF8B5A2B), // Warna coklat kopi
+          color: Color(0xFF8B5A2B), 
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(40),
             bottomRight: Radius.circular(40),
@@ -88,7 +87,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      // Konten di atas background
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -151,12 +149,12 @@ class _HomePageState extends State<HomePage> {
                 physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // 2 kolom
+                  crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   childAspectRatio: 0.8,
                 ),
-                itemCount: 4, // Jumlah card kosong
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return const BeansCard();
                 },
