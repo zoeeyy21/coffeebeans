@@ -12,7 +12,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown,
+        backgroundColor: const Color(0xFF8B5A2B),
         iconTheme: const IconThemeData(color: Colors.white),
         title: const Text(
           'Profile',
@@ -37,7 +37,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 20),
             const Text(
-              "Username",
+              "Rizky Firman Nanda",
               style: TextStyle(
                 fontFamily: 'poppins',
                 fontSize: 18,
@@ -46,7 +46,15 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 10),
             const Text(
-              "email@example.com",
+              "email: rizkyfn021@gmail.com",
+              style: TextStyle(
+                fontFamily: 'poppins',
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+            ),
+            const Text(
+              "ig: @rizkyfrmnnd",
               style: TextStyle(
                 fontFamily: 'poppins',
                 fontSize: 14,
