@@ -50,9 +50,9 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 50.0), // Kasih jarak dari atas
+        padding: const EdgeInsets.only(top: 50.0), 
         child: Align(
-          alignment: Alignment.topCenter, // Pindahin video ke atas tengah
+          alignment: Alignment.topCenter, 
           child: _videoPlayerController.value.isInitialized
               ? AspectRatio(
                   aspectRatio: _videoPlayerController.value.aspectRatio,
