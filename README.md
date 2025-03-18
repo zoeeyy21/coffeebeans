@@ -1,3 +1,1 @@
-# coffee
-
-A new Flutter project.
+App about beans of coffee
